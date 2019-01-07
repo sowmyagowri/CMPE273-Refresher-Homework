@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Silicon Valley Code Camp Registration</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Silicon Valley Code Camp Registration</h3>
+    <form action="https://google.com/">
+        <fieldset>
+            <legend>Registration Information</legend>
+                First Name <br> <input  type="text" required autocomplete="on"
+                                        autofocus="autofocus" 
+                                        pattern="^[a-zA-Z]+$" 
+                                        required="required"><br>
+                Last Name <br> <input   type="text" required autocomplete="on" 
+                                        pattern="^[a-zA-Z]+$" 
+                                        required="required"><br>
+                Gender <br>
+                <input type="radio" name="gender">Male<br>
+                <input type="radio" name="gender">Female<br>
+                <input type="radio" name="gender">Undisclosed<br>
+                Email (used as login ID) <br> <input type="email" required="required"><br>
+                Phone number (in the form xxx-xxx-xxxx): <br> <input type="tel" id="phone" name="phone" 
+                                        placeholder="123-456-7890" 
+                                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                        size=12
+                                        required /><br>
+                Password <br> <input type="password" required="required"><br><br>
+                Days Attending <br>
+                <input type="checkbox" name="saturday" value="Saturday">Saturday<br>
+                <input type="checkbox" name="sunday" value="Sunday">Sunday <br><br>
+                <input type="submit" value="Register">
+                <input type="reset">
+        </fieldset>
+    </form>
+</body>
+</html>

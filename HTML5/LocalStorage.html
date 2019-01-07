@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+<input type="text" id="gname" name="guestname" placeholder="Guest Name"><br>
+<input type="text" id="attendflag" name="yesno" placeholder="Attending or not"><br>
+<button id="buttonID" name="submit-button" onclick="storeData()">Register</button>
+<button id="showID" name="show-button" onclick="showGuests()">Show Guests List</button>
+<button id="resetID" name="reset-button" onclick="clearList()">Clear Guests List</button>
+
+
+<p id="showList"></p>
+
+</div>
+
+<script type="text/javascript">
+function storeData() {
+	var gname = document.getElementById("gname");
+	var attendflag = document.getElementById("attendflag");
+	localStorage.setItem(gname.value, attendflag.value);
+	document.getElementById("gname").value = "";
+    document.getElementById("attendflag").value = "";
+}
+
+function showGuests() {
+	var i;
+	var showList = "<table border = '1'><tr><th width=100><b>Name</b></th><th width=100><b>Attending</b></th></tr>\n <br>";
+	for (i=0;i<localStorage.length;i++) {
+		key = localStorage.key(i);
+		showList += "<tr><td width=50>" + key + "</td>\n<td width=50>"
+                    + localStorage.getItem(key) + "</td></tr>\n" + "<br>";
+		console.log(key, localStorage.getItem(key));
+	}
+	showList += "</table>";
+	document.getElementById("showList").innerHTML = showList;
+}
+
+function clearList() {
+	localStorage.clear();
+	document.getElementById("showList").innerHTML = "";
+}
+</script>
